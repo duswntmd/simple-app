@@ -45,7 +45,7 @@ pipeline {
                             exit 1
                         fi
                         """
-                   // }
+                    }
                 }
             }
         }
@@ -63,7 +63,7 @@ pipeline {
                 }
             }
         }
-        /*
+        
         stage('Push to Docker Hub') {
             steps {
                 script {
@@ -76,7 +76,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
         
         stage('Run Docker Container') {
             steps {
@@ -88,7 +88,7 @@ pipeline {
                     """
                 }
             }
-        }*/
+        }
     }
     
     /*
