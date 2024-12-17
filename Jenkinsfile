@@ -6,7 +6,7 @@ pipeline {
         GITHUB_REPO = "https://github.com/duswntmd/simple-app.git"
         JAR_FILE = "simple.jar"
     }
-
+//
     stages {
         
         stage('Cleanup Workspace') {
