@@ -6,7 +6,7 @@ pipeline {
         GITHUB_REPO = "https://github.com/duswntmd/simple-app.git"
         JAR_FILE = "simple.jar"
     }
-//
+
     stages {
         
         stage('Cleanup Workspace') {
@@ -54,8 +54,8 @@ pipeline {
                     echo "Building Docker image..." 
                     writeFile file: 'Dockerfile', text: """
                     FROM openjdk:21-slim
-                    COPY ${JAR_FILE} /simple-app.jar
-                    CMD ["java", "-jar", "/simple-app.jar"]
+                    COPY ${JAR_FILE} /simple.jar
+                    CMD ["java", "-jar", "/simple.jar"]
                     """
                     sh "docker build -t ${DOCKER_IMAGE} ."
                     echo "Docker image created!"
