@@ -47,6 +47,15 @@ pipeline {
                 }
             }
         }
+
+        stage('Verify JAR File') {
+            steps {
+                script {
+                    echo "Verifying JAR file..."
+                    sh 'ls -l simple.jar'
+                }
+            }
+        }
         
         stage('Build Docker Image') {
             steps {
