@@ -36,16 +36,14 @@ pipeline {
             steps {
                 script {
                     echo "Preparing JAR file..."
-                    //dir('app') {
-                        sh """
-                        if [ -f ${JAR_FILE} ]; then
-                            echo "JAR file ${JAR_FILE} found."
-                        else
-                            echo "JAR file not found. Ensure the project is built correctly."
-                            exit 1
-                        fi
-                        """
-                    //}
+                    sh """
+                    if [ -f ${JAR_FILE} ]; then
+                        echo "JAR file ${JAR_FILE} found."
+                    else
+                        echo "JAR file not found. Ensure the project is built correctly."
+                        exit 1
+                    fi
+                    """
                 }
             }
         }
@@ -90,7 +88,7 @@ pipeline {
             }
         }
     }
-    
+
     /*
     post {
         always {
@@ -98,5 +96,4 @@ pipeline {
             //cleanWs()
         }
     }*/
-}
 }
