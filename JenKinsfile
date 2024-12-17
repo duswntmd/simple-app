@@ -1,6 +1,6 @@
 pipeline {
     agent any
-//
+
     environment {
         DOCKER_IMAGE = "duswntmd/simple-app:1.0"
         GITHUB_REPO = "https://github.com/duswntmd/simple-app.git"
@@ -11,8 +11,8 @@ pipeline {
         
         stage('Cleanup Workspace') {
             steps {
-                //cleanWs()
-                echo 'Cleaned up'
+                //cleanWs() //삭제하고 다시올리는 코드
+                echo 'Cleaned up' //디버깅 메시지
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: 'main']],
                     userRemoteConfigs: [[
-                        credentialsId: 'GitHub_ID_PWD',       // Jenkins에서 github의 id, pwd를 등록하고 아이디를 'GitHub_ID_PWD' 으로 지정해야 함
+                        credentialsId: 'GitHub_login',       // Jenkins에서 github의 id, pwd를 등록하고 아이디를 'GitHub_ID_PWD' 으로 지정해야 함
                         url: GITHUB_REPO
                     ]]
                 ])
