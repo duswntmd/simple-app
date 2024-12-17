@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "duswntmd/simple-app:1.0"
+        DOCKER_IMAGE = "duswntmd/simple:1.0"
         GITHUB_REPO = "https://github.com/duswntmd/simple-app.git"
         JAR_FILE = "simple.jar"
     }
